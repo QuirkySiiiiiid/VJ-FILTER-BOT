@@ -48,8 +48,8 @@ async def save_file(media):
 
 def clean_file_name(file_name):
     """Clean and format the file name."""
-    file_name = re.sub(r"(_|-|.|+)", " ", str(file_name)) 
-    unwanted_chars = ['[', ']', '(', ')', '{', '}']
+    file_name = re.sub(r"[_\-\.\+]", " ", str(file_name))
+unwanted_chars = ['[', ']', '(', ')', '{', '}']
     
     for char in unwanted_chars:
         file_name = file_name.replace(char, '')
